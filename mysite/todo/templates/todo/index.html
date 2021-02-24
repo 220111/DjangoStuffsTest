@@ -1,0 +1,9 @@
+{% if latest_todo_list %}
+    <ul>
+    {% for list in latest_todo_list %}
+    <li><a href="{% url 'todo:detail' list.id %}">{{ list.list_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No lists are available.</p>
+{% endif %}

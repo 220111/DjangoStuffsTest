@@ -1,0 +1,9 @@
+{% if latest_item_list %}
+    <ul>
+    {% for collecteditem in latest_item_list %}
+        <li><a href="/data/{{ collecteditem.id }}/">{{ collecteditem.item_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

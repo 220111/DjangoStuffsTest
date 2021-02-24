@@ -1,0 +1,14 @@
+<h1>TODO List #{{ list.id }}
+<h1>{{ list.list_name }}</h1>
+<ul>
+{% for listitem in list.listitem_set.all %}
+    <form action="{% url 'todo:detail' list.id %}" method="post">
+    {%csrf_token%}
+    {{form}}
+    {% for sublistitem in listitem.sublistitem_set.all %}
+    <ul style="list-style-position: inside;">
+        
+    </ul>
+    {% endfor %}
+{% endfor %}
+</ul>

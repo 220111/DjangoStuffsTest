@@ -1,0 +1,10 @@
+<h1>{{ collecteditem.item_name }}</h1>
+<img src="{{ collecteditem.icon_image.url }}" style="width:200px;height:200px;"">
+<p>Date found: {{ collecteditem.collect_date }}</p>
+<p>{{ collecteditem.detail_text }}</p><br>
+<p>Related Items:</p>
+<ul>
+{% for collecteditem in collecteditem.related_item.all %}
+    <li><a href="/data/{{ collecteditem.id }}/">{{ collecteditem.item_name }}</a></li>
+{% endfor %}
+</ul>
